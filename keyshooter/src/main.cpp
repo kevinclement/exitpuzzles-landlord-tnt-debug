@@ -4,6 +4,17 @@
 #define RELAY_ON    0
 #define RELAY_OFF   1
 
+bool isSerial() {
+  bool available = false;
+
+  if (Serial.available()) {
+    String str = Serial.readString();
+    available = true;
+  }
+
+  return available;
+}
+
 void setup() {
 
   Serial.begin(9600);
@@ -15,14 +26,10 @@ void setup() {
 }
 
 bool shooterOn = false;
-
 void loop() {
 
-  if (Serial.available()) {
-    String str = Serial.readString();
-
+  if (isSerial()) {
     shooterOn = !shooterOn;
-    
     Serial.print("Shooter: ");
     if (shooterOn) {
       Serial.print("ON");
@@ -33,6 +40,5 @@ void loop() {
   }
   
   digitalWrite(SHOOTER_PIN, shooterOn ? RELAY_ON : RELAY_OFF);
-
   delay(100);
 }
