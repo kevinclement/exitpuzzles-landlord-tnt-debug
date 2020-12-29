@@ -1,2 +1,0 @@
-#!/bin/sh
-pio device monitor -b 9600 -p /dev/ttyTNT
