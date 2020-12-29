@@ -22,10 +22,6 @@ void loop() {
     String str = Serial.readString();
 
     lockOn = !lockOn;
-    // Serial.print("got serial available '");
-    // Serial.print(str);
-    // Serial.print("'");
-    // Serial.println();
     
     Serial.print("Lock: ");
     if (lockOn) {
