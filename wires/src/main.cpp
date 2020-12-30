@@ -9,8 +9,7 @@ void setup() {
   pinMode(A1, INPUT_PULLUP);
   pinMode(A2, INPUT_PULLUP);
   pinMode(A3, INPUT_PULLUP);
-  pinMode(A4, INPUT_PULLUP);
-  }
+}
 
 void loop() {
   // ## WIRES ##########
@@ -22,19 +21,8 @@ void loop() {
   // B->D : A1 (4.7k resistor - 125 avg reading)
   // C->2 : A3 (no resistor - 15 avg reading)
 
-  int average = 0;
-  for (int i=0; i < 10; i++) {
-    average = average + analogRead(A1);
-  }
-  average = average/10;
-
-  Serial.print(" A1: ");
-  Serial.print(average);
-
-  // ## DONE #######################
-  
-
-  Serial.println("");
+  Serial.print("A3: ");
+  Serial.println(analogRead(A3));
   
   delay(100);
 }
