@@ -3,6 +3,11 @@
 #include <Keypad.h>
 #include "Wire.h"
 
+// NOTE: this is not what is in the device.  At one point I was using
+// a keypad with an i2c hooked up to it instead of directly to 8 pins
+// it worked but I bent the board trying to fit it and busted it so
+// I had to switch back to an 8-pin keypad.  See other keypad example.
+
 // Keypad settings
 #define ROWS 4
 #define COLS 4
