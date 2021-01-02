@@ -21,8 +21,16 @@ void loop() {
   // B->D : A1 (4.7k resistor - 125 avg reading)
   // C->2 : A3 (no resistor - 15 avg reading)
 
-  Serial.print("A3: ");
-  Serial.println(analogRead(A3));
+  Serial.print("A0: ");
+  Serial.print(analogRead(A0));
+  Serial.print("   A1: ");
+  Serial.print(analogRead(A1));
+  Serial.print("   A2: ");
+  Serial.print(analogRead(A2));
+  Serial.print("   A3: ");
+  Serial.print(analogRead(A3));
+  
+  Serial.println();
   
   delay(100);
 }
